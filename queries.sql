@@ -27,5 +27,5 @@ WHERE OrderDetail.OrderId = 10251
 
 SELECT [Order].id ,Customer.CompanyName, employee.LastName
 FROM [Order]
-JOIN employee, Customer
+JOIN Employee, Customer
 WHERE [Order].CustomerId = [Customer].Id AND [Order].EmployeeId = [Employee].Id

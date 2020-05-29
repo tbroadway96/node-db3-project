@@ -1,5 +1,7 @@
 const db = require('../data/db-config');
 
+
+
 const find = () => {
     return db('schemes');
 }
@@ -9,10 +11,8 @@ const findById = (id) => {
 }
 
 const findSteps = (id) => {
-    return db( 'steps as w')
-    .join('schemes as s', 's.id', 'w.scheme_id',)
-    .select('s.scheme_name', 'w.step_number', 'w.instructions', )
-    .where({ scheme_id: id });
+    return db( 'steps').where({ scheme_id: id })
+    .orderBy('step_number');
 }
 
 const add = (data) => {
